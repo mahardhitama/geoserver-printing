@@ -286,7 +286,8 @@ layouts:
           config:
             borderWidth: 1
             cells:
-              - borderWidth: 1
+              - borderWidth: 0.5
+                borderWidthBottom: 0
                 padding: 5
           widths: [10,70,20]
           items:
@@ -309,6 +310,8 @@ layouts:
             borderWidth: 1
             cells:
               - borderWidth: 1
+                borderWidthBottom: 0
+                padding: 5
           items:
             - !map
               width: 750
@@ -317,7 +320,7 @@ layouts:
           config:
             borderWidth: 1
             cells:
-              - borderWidth: 1
+              - borderWidth: 0.5
                 padding: 5
           widths: [70,30]
           items:
@@ -332,9 +335,14 @@ layouts:
               fontSize: 10
               text: 'https://simtaru.papua.go.id'
         - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - padding: 2
+                backgroundColor: #FFFFFF
           absoluteX: 50
-          absoluteY: 490
-          width: 50
+          absoluteY: 495
+          width: 54
           items:
             - !image
               maxWidth: 50
@@ -347,25 +355,27 @@ layouts:
                 borderWidthLeft: 1
                 borderColor: black
                 padding: 4
-                backgroundColor: white
+                backgroundColor: #FFFFFF
                 vertAlign: bottom
-          absoluteX: 580
-          absoluteY: 490
+          absoluteX: 590
+          absoluteY: 495
           width: 200
           items:
             - !legends
               horizontalAlignment: left
               iconMaxWidth: 0
               iconMaxHeight: 0
-              layerSpace: 3
+              layerSpace: 2
               layerFontSize: 8
-              classIndentation: 3
+              classIndentation: 0
               classFontSize: 8
-              classSpace: 2
+              classSpace: 0
               # backgroundColor: #ffffff
               failOnBrokenUrl: false
               textMaxWidth: 150
               maxWidth: 200
+              maxHeight: 400
+              defaultScale: 0.7
 
   #=======A4 portrait no legend=============================================
   A4_no_legend :
