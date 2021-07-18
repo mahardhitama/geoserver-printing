@@ -41,12 +41,13 @@ scales:
   - 140000000.0
   - 280000000.0
 
-outputFilename: 'GeoNode-Map-${date}.pdf'
+outputFilename: 'GeoNode-Map-${date}'
+formats: ['*']
 #== ms2 ===== 
-disableScaleLocking: true
+disableScaleLocking: false
 #======
 brokenUrlPlaceholder: 'default'
-# brokenUrlPlaceholder: 'throw'
+brokenUrlPlaceholder: 'throw'
 
 proxyBaseUrl: http://geoserver:8080/geoserver/pdf
 connectionTimeout: 2000
@@ -282,89 +283,54 @@ layouts:
       landscape: false
       items:
         - !columns
-          absoluteX: 30
-          absoluteY: 575
-          width: 782
-          items:
-            - !image
-              maxWidth: 782
-              url: '/${configDir}/print_header.png'
-        - !map
-          width: 592
-          height: 400
-          absoluteX:30
-          absoluteY:475
-        #legend panel            
-        - !columns               
+          # absoluteX: 5
+          # absoluteY: 590
           config:
             borderWidth: 1
             cells:
-              - borderWidth: 2
-                borderWidthLeft: 1
-                borderColor: black
-                padding: 4
-                backgroundColor: white
-                vertAlign: bottom
-          widths: [170]
-          absoluteX: 642
-          absoluteY: 475
-          width: 170
-          items:
-            - !legends
-              horizontalAlignment: left
-              #iconMaxWidth: 150
-              iconMaxHeight: 0
-              layerSpace: 5
-              layerFontSize: 12
-              classIndentation: 5
-              classFontSize: 8
-              classSpace: 4
-              backgroundColor: #ffffff
-              failOnBrokenUrl: false
-        - !columns
-          absoluteX: 590
-          absoluteY: 140
-          width: 40
+              - borderWidth: 1
+          widths: [10,70,20]
           items:
             - !image
-              maxWidth: 40
-              maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
-              rotation: '${rotation}'          
-        - !columns
-          absoluteX: 30
-          absoluteY: 55
-          width: 782
-          widths: [240, 300, 240]
-          items:
-            - !columns
-              nbColumns: 1
-              items:
-                - !text
-                  width: 300
-                  text: '${comment}'  
-                  fontEncoding: Cp1252
-                  fontSize: 9                     
-                  align: left
-                  vertAlign: middle               
-                - !text
-                  width: 300
-                  text: '${now MM.dd.yyyy}'  
-                  fontEncoding: Cp1252
-                  fontSize: 9                     
-                  align: left
-                  vertAlign: middle
+              maxWidth: 50
+              url: '/${configDir}/papua.png'
             - !text
               align: center
               vertAlign: middle
               fontSize: 14
               text: '${mapTitle}'
-            - !scalebar
+            - !text
+              align: center
+              vertAlign: middle
+              fontSize: 14
+              text: '${now MM.dd.yyyy}'
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 1
+          items:
+            - !map
+              width: 750
+              height: 460
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 1
+          widths: [70,30]
+          items:
+            - !text
+              align: left
+              vertAlign: middle
+              fontSize: 14
+              text: 'Simtaru Papua (c) 2021'
+            - !text
               align: right
               vertAlign: middle
-              maxSize: 200
-              type: 'bar sub'
-              intervals: 5
+              fontSize: 14
+              text: 'https://simtaru.papua.go.id'
+
   #=======A4 portrait no legend=============================================
   A4_no_legend :
   #=========================================================================
