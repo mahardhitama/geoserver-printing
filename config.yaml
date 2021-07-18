@@ -283,15 +283,15 @@ layouts:
       landscape: false
       items:
         - !columns
-          # absoluteX: 5
-          # absoluteY: 590
           config:
             borderWidth: 1
             cells:
               - borderWidth: 1
+                padding: 5
           widths: [10,70,20]
           items:
             - !image
+              align: center
               maxWidth: 50
               url: '/${configDir}/papua.png'
             - !text
@@ -312,24 +312,60 @@ layouts:
           items:
             - !map
               width: 750
-              height: 460
+              height: 455
         - !columns
           config:
             borderWidth: 1
             cells:
               - borderWidth: 1
+                padding: 5
           widths: [70,30]
           items:
             - !text
               align: left
               vertAlign: middle
-              fontSize: 14
+              fontSize: 10
               text: 'Simtaru Papua (c) 2021'
             - !text
               align: right
               vertAlign: middle
-              fontSize: 14
+              fontSize: 10
               text: 'https://simtaru.papua.go.id'
+        - !columns
+          absoluteX: 50
+          absoluteY: 490
+          width: 50
+          items:
+            - !image
+              maxWidth: 50
+              url: '/${configDir}/north_arrow.png'
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 2
+                borderWidthLeft: 1
+                borderColor: black
+                padding: 4
+                backgroundColor: white
+                vertAlign: bottom
+          absoluteX: 580
+          absoluteY: 490
+          width: 200
+          items:
+            - !legends
+              horizontalAlignment: left
+              iconMaxWidth: 0
+              iconMaxHeight: 0
+              layerSpace: 3
+              layerFontSize: 8
+              classIndentation: 3
+              classFontSize: 8
+              classSpace: 2
+              # backgroundColor: #ffffff
+              failOnBrokenUrl: false
+              textMaxWidth: 150
+              maxWidth: 200
 
   #=======A4 portrait no legend=============================================
   A4_no_legend :
