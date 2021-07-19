@@ -501,3 +501,156 @@ layouts:
             - !image
               maxWidth: 50
               url: '/${configDir}/north_arrow.png'
+
+  #=======A4 portrait with 2 pages legend=====================================
+  A4_2_pages_legend :
+  #===========================================================================
+    mainPage:
+      rotation: true
+      pageSize: 595 842
+      landscape: false
+      items:
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0.5
+                borderWidthBottom: 0
+                padding: 5
+          widths: [12,68,20]
+          items:
+            - !image
+              align: center
+              maxWidth: 50
+              url: '/${configDir}/papua.png'
+            - !text
+              align: center
+              vertAlign: middle
+              fontSize: 14
+              text: '${mapTitle}'
+            - !text
+              align: center
+              vertAlign: middle
+              fontSize: 14
+              text: '${now MM.dd.yyyy}'
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 1
+                borderWidthBottom: 0
+                padding: 5
+          items:
+            - !map
+              width: 495
+              height: 660
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0.5
+                padding: 5
+          widths: [70,30]
+          items:
+            - !text
+              align: left
+              vertAlign: middle
+              fontSize: 10
+              text: 'Simtaru Papua (c) 2021'
+            - !text
+              align: right
+              vertAlign: middle
+              fontSize: 10
+              text: 'https://simtaru.papua.go.id'
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - padding: 2
+                backgroundColor: #FFFFFF
+          absoluteX: 490
+          absoluteY: 740
+          width: 54
+          items:
+            - !image
+              maxWidth: 50
+              url: '/${configDir}/north_arrow.png'
+    lastPage:
+      rotation: true
+      pageSize: 595 842 
+      landscape: false
+      items: 
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0.5
+                borderWidthBottom: 0
+                padding: 5
+          widths: [12,68,20]
+          items:
+            - !image
+              align: center
+              maxWidth: 50
+              url: '/${configDir}/papua.png'
+            - !text
+              align: center
+              vertAlign: middle
+              fontSize: 14
+              text: '${mapTitle}'
+            - !text
+              align: center
+              vertAlign: middle
+              fontSize: 14
+              text: '${now MM.dd.yyyy}'      
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0
+                borderWidthLeft: 0
+                borderColor: black
+                padding: 5
+                backgroundColor: white
+                vertAlign: bottom
+          # widths: [800]
+          # absoluteX: 5
+          # absoluteY: 837
+          # width: 585
+          items:
+            - !legends      
+              failOnBrokenUrl: false
+              horizontalAlignment: left
+              iconMaxWidth: 0
+              iconMaxHeight: 0
+              # maxHeight: 822
+              maxColumns: 1
+              # maxWidth: 575
+              layerSpace: 0
+              layerFontSize: 8
+              classIndentation: 0
+              classFontSize: 8
+              classSpace: 0
+              backgroundColor: #ffffff                
+              reorderColumns: true    
+              dontBreakItems: true  
+              overflow: true
+              defaultScale: 0.7
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0.5
+                padding: 5
+          widths: [70,30]
+          items:
+            - !text
+              align: left
+              vertAlign: middle
+              fontSize: 10
+              text: 'Simtaru Papua (c) 2021'
+            - !text
+              align: right
+              vertAlign: middle
+              fontSize: 10
+              text: 'https://simtaru.papua.go.id'
