@@ -150,128 +150,105 @@ layouts:
   #===========================================================================
   A4 :
   #===========================================================================
-    metaData:
-      title: '${mapTitle}'
-      author: 'GeoNode'
-      subject: 'Simple layout'
-      keywords: 'map,print'
-      creator: 'GeoNode'
     mainPage:
       rotation: true
-      pageSize: 802 555
+      pageSize: 595 842
       landscape: false
       items:
         - !columns
-          absoluteX: 30
-          absoluteY: 535
-          width: 752
-          widths: [260, 522]
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0.5
+                borderWidthBottom: 0
+                padding: 5
+          widths: [12,68,20]
           items:
             - !image
-              maxWidth: 752
-              url: '/${configDir}/print_header.png'
+              align: center
+              maxWidth: 50
+              url: '/${configDir}/papua.png'
             - !text
-              font: Helvetica
-              fontSize: 22
-              fontColor: #0874B8
-              spacingAfter: 100
-              align: left
+              align: center
+              vertAlign: middle
+              fontSize: 14
               text: '${mapTitle}'
-              maxLength: 100
-        - !map
-          width: 500
-          height: 320
-          absoluteX:30
-          absoluteY:435
-        #legend panel
+            - !text
+              align: center
+              vertAlign: middle
+              fontSize: 14
+              text: '${now MM.dd.yyyy}'
         - !columns
           config:
             borderWidth: 1
             cells:
               - borderWidth: 1
+                borderWidthBottom: 0
+                padding: 5
+          items:
+            - !map
+              width: 495
+              height: 660
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0.5
+                padding: 5
+          widths: [70,30]
+          items:
+            - !text
+              align: left
+              vertAlign: middle
+              fontSize: 10
+              text: 'Simtaru Papua (c) 2021'
+            - !text
+              align: right
+              vertAlign: middle
+              fontSize: 10
+              text: 'https://simtaru.papua.go.id'
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - padding: 2
+                backgroundColor: #FFFFFF
+          absoluteX: 50
+          absoluteY: 740
+          width: 54
+          items:
+            - !image
+              maxWidth: 50
+              url: '/${configDir}/north_arrow.png'
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 2
                 borderWidthLeft: 1
                 borderColor: black
-                padding: 2
-                backgroundColor: white
+                padding: 4
+                backgroundColor: #FFFFFF
                 vertAlign: bottom
-          widths: [170]
-          absoluteX: 542
-          absoluteY: 435
-          width: 235
-          height: 500
+          absoluteX: 390
+          absoluteY: 740
+          width: 150
           items:
             - !legends
               horizontalAlignment: left
-              iconMaxWidth: 150
+              iconMaxWidth: 0
               iconMaxHeight: 0
-              layerSpace: 5
-              layerFontSize: 6
-              classIndentation: 5
-              classFontSize: 6
-              classSpace: 4
-              backgroundColor: #ffffff
-              failOnBrokenUrl: true
-              overflow: false
-        - !columns
-          absoluteX: 475
-          absoluteY: 165
-          width: 40
-          items:
-            - !image
-              maxWidth: 40
-              maxHeight: 40
-              url: 'file://${configDir}/Arrow_North_CFCF.svg'
-              rotation: '${rotation}'
-        - !columns
-          config:
-            borderWidth: 0
-            cells:
-              - borderWidth: 0
-                borderWidthLeft: 1
-                borderColor: white
-                padding: 2
-          absoluteX: 30
-          absoluteY: 95
-          width: 752
-          widths: [138, 455, 98]
-          items:
-            - !columns
-              config:
-                borderWidth: 4
-                cells:
-                  - borderWidth: 2
-                    borderWidthLeft: 1
-                    borderColor: white
-                    padding: 3
-              nbColumns: 1
-              items:
-                - !text
-                  width: 420
-                  text: '(c) example.com'
-                  fontEncoding: Cp1252
-                  fontSize: 7
-                  align: justified
-                  vertAlign: top
-                  spacingAfter: 2
-                - !text
-                  width: 420
-                  text: '${now MM.dd.yyyy}'
-                  fontEncoding: Cp1252
-                  fontSize: 5
-                  align: left
-                  vertAlign: bottom
-            - !text
-              align: justified
-              vertAlign: top
-              fontSize: 8
-              text: '${comment}'
-              maxLength: 1200
-            - !scalebar
-              align: right
-              vertAlign: middle
-              maxSize: 108
-              type: 'bar sub'
-              intervals: 5
+              layerSpace: 2
+              layerFontSize: 8
+              classIndentation: 0
+              classFontSize: 8
+              classSpace: 0
+              # backgroundColor: #ffffff
+              failOnBrokenUrl: false
+              textMaxWidth: 125
+              maxWidth: 150
+              maxHeight: 400
+              defaultScale: 0.5
 
   #mapstore2 layout
   #=======A4 landscape with legend============================================
@@ -315,7 +292,7 @@ layouts:
           items:
             - !map
               width: 750
-              height: 455
+              height: 450
         - !columns
           config:
             borderWidth: 1
@@ -357,9 +334,9 @@ layouts:
                 padding: 4
                 backgroundColor: #FFFFFF
                 vertAlign: bottom
-          absoluteX: 590
+          absoluteX: 640
           absoluteY: 495
-          width: 200
+          width: 150
           items:
             - !legends
               horizontalAlignment: left
@@ -373,87 +350,10 @@ layouts:
               # backgroundColor: #ffffff
               failOnBrokenUrl: false
               textMaxWidth: 150
-              maxWidth: 200
+              maxWidth: 150
               maxHeight: 400
-              defaultScale: 0.7
+              defaultScale: 0.5
 
-  #=======A4 portrait no legend=============================================
-  A4_no_legend :
-  #=========================================================================
-    mainPage:
-      rotation: true
-      pageSize: 595 842 
-      landscape: false
-      items:
-        - !columns
-          absoluteX: 30
-          absoluteY: 800
-          width: 550
-          items:
-            - !image
-              maxWidth: 550
-              url: '/${configDir}/print_header.png'
-        - !map
-          height: 600
-          width: 535
-          absoluteX: 30
-          absoluteY: 670
-        - !columns
-          absoluteX: 510
-          absoluteY: 140
-          width: 40
-          items:
-            - !image
-              maxWidth: 40
-              maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
-              rotation: '${rotation}'     
-        - !columns
-          absoluteX: 30
-          absoluteY: 740
-          width: 395
-          widths: [395]
-          items:
-            - !text
-              align: left
-              vertAlign: middle
-              fontSize: 14
-              text: '${mapTitle}'
-        - !columns
-          absoluteX: 30
-          absoluteY: 710
-          width: 395
-          widths: [395]
-          items:
-            - !text
-              width: 300
-              text: '${comment}'  
-              fontEncoding: Cp1252
-              fontSize: 9                     
-              align: left
-              vertAlign: middle   
-        - !columns
-          absoluteX: 30
-          absoluteY: 55
-          width: 535
-          widths: [240, 240]
-          items:
-            - !columns
-              nbColumns: 1
-              items:            
-                - !text
-                  width: 300
-                  text: '${now MM.dd.yyyy}'  
-                  fontEncoding: Cp1252
-                  fontSize: 9                     
-                  align: left
-                  vertAlign: middle
-            - !scalebar
-              align: right
-              vertAlign: middle
-              maxSize: 200
-              type: 'bar sub'
-              intervals: 5
   #=======A4 landscape no legend=============================================
   A4_no_legend_landscape :
   #===========================================================================
@@ -463,59 +363,141 @@ layouts:
       landscape: false
       items:
         - !columns
-          absoluteX: 30
-          absoluteY: 575
-          width: 782
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0.5
+                borderWidthBottom: 0
+                padding: 5
+          widths: [10,70,20]
           items:
             - !image
-              maxWidth: 782
-              url: '/${configDir}/print_header.png'
-        - !map
-          width: 780
-          height: 400
-          absoluteX:30
-          absoluteY:475
-        - !columns
-          absoluteX: 750
-          absoluteY: 140
-          width: 40
-          items:
-            - !image
-              maxWidth: 40
-              maxHeight: 40
-              url: 'file:/${configDir}/Arrow_North_CFCF.svg'
-              rotation: '${rotation}'          
-        - !columns
-          absoluteX: 30
-          absoluteY: 55
-          width: 782
-          widths: [240, 300, 240]
-          items:
-            - !columns
-              nbColumns: 1
-              items:
-                - !text
-                  width: 300
-                  text: '${comment}'  
-                  fontEncoding: Cp1252
-                  fontSize: 9                     
-                  align: left
-                  vertAlign: middle               
-                - !text
-                  width: 300
-                  text: '${now MM.dd.yyyy}'  
-                  fontEncoding: Cp1252
-                  fontSize: 9                     
-                  align: left
-                  vertAlign: middle
+              align: center
+              maxWidth: 50
+              url: '/${configDir}/papua.png'
             - !text
               align: center
               vertAlign: middle
               fontSize: 14
               text: '${mapTitle}'
-            - !scalebar
+            - !text
+              align: center
+              vertAlign: middle
+              fontSize: 14
+              text: '${now MM.dd.yyyy}'
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 1
+                borderWidthBottom: 0
+                padding: 5
+          items:
+            - !map
+              width: 750
+              height: 450
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0.5
+                padding: 5
+          widths: [70,30]
+          items:
+            - !text
+              align: left
+              vertAlign: middle
+              fontSize: 10
+              text: 'Simtaru Papua (c) 2021'
+            - !text
               align: right
               vertAlign: middle
-              maxSize: 200
-              type: 'bar sub'
-              intervals: 5
+              fontSize: 10
+              text: 'https://simtaru.papua.go.id'
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - padding: 2
+                backgroundColor: #FFFFFF
+          absoluteX: 740
+          absoluteY: 495
+          width: 54
+          items:
+            - !image
+              maxWidth: 50
+              url: '/${configDir}/north_arrow.png'
+
+  #=======A4 portrait no legend=============================================
+  A4_no_legend :
+  #=========================================================================
+    mainPage:
+      rotation: true
+      pageSize: 595 842
+      landscape: false
+      items:
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0.5
+                borderWidthBottom: 0
+                padding: 5
+          widths: [12,68,20]
+          items:
+            - !image
+              align: center
+              maxWidth: 50
+              url: '/${configDir}/papua.png'
+            - !text
+              align: center
+              vertAlign: middle
+              fontSize: 14
+              text: '${mapTitle}'
+            - !text
+              align: center
+              vertAlign: middle
+              fontSize: 14
+              text: '${now MM.dd.yyyy}'
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 1
+                borderWidthBottom: 0
+                padding: 5
+          items:
+            - !map
+              width: 495
+              height: 660
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - borderWidth: 0.5
+                padding: 5
+          widths: [70,30]
+          items:
+            - !text
+              align: left
+              vertAlign: middle
+              fontSize: 10
+              text: 'Simtaru Papua (c) 2021'
+            - !text
+              align: right
+              vertAlign: middle
+              fontSize: 10
+              text: 'https://simtaru.papua.go.id'
+        - !columns
+          config:
+            borderWidth: 1
+            cells:
+              - padding: 2
+                backgroundColor: #FFFFFF
+          absoluteX: 490
+          absoluteY: 740
+          width: 54
+          items:
+            - !image
+              maxWidth: 50
+              url: '/${configDir}/north_arrow.png'
