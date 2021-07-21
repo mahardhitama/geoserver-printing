@@ -249,6 +249,17 @@ layouts:
               maxWidth: 150
               maxHeight: 400
               defaultScale: 0.5
+        - !columns
+          absoluteX: 340
+          absoluteY: 110
+          width: 200
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 175
+              type: 'bar sub'
+              intervals: 5
 
   #mapstore2 layout
   #=======A4 landscape with legend============================================
@@ -353,6 +364,17 @@ layouts:
               maxWidth: 150
               maxHeight: 400
               defaultScale: 0.5
+        - !columns
+          absoluteX: 590
+          absoluteY: 75
+          width: 200
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 175
+              type: 'bar sub'
+              intervals: 5
 
   #=======A4 landscape no legend=============================================
   A4_no_legend_landscape :
@@ -427,6 +449,17 @@ layouts:
             - !image
               maxWidth: 50
               url: '/${configDir}/north_arrow.png'
+        - !columns
+          absoluteX: 590
+          absoluteY: 75
+          width: 200
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 175
+              type: 'bar sub'
+              intervals: 5
 
   #=======A4 portrait no legend=============================================
   A4_no_legend :
@@ -501,6 +534,17 @@ layouts:
             - !image
               maxWidth: 50
               url: '/${configDir}/north_arrow.png'
+        - !columns
+          absoluteX: 340
+          absoluteY: 110
+          width: 200
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 175
+              type: 'bar sub'
+              intervals: 5
 
   #=======A4 portrait with 2 pages legend=====================================
   A4_2_pages_legend :
@@ -575,6 +619,17 @@ layouts:
             - !image
               maxWidth: 50
               url: '/${configDir}/north_arrow.png'
+        - !columns
+          absoluteX: 340
+          absoluteY: 110
+          width: 200
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 175
+              type: 'bar sub'
+              intervals: 5
     lastPage:
       rotation: true
       pageSize: 595 842 
@@ -728,6 +783,17 @@ layouts:
             - !image
               maxWidth: 50
               url: '/${configDir}/north_arrow.png'
+        - !columns
+          absoluteX: 590
+          absoluteY: 75
+          width: 200
+          items:
+            - !scalebar
+              align: right
+              vertAlign: middle
+              maxSize: 175
+              type: 'bar sub'
+              intervals: 5
     lastPage:
       rotation: true
       pageSize: 842 595
